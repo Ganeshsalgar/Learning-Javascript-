@@ -16,6 +16,42 @@ Node.js is a JavaScript runtime environment that allows JavaScript to run outsid
 
 ---
 
+---
+
+### NVM - Node Version Manager
+- Used to manage multiple Node.js versions.
+- Manage the output of `node --version`.
+- Allows you to install, switch, and uninstall Node.js versions.
+
+Example:
+```bash
+nvm install 22
+nvm use 22
+node --version
+```
+
+### NPM - Node Package Manager
+- Used to install and manage Node.js packages.
+- Comes bundled with Node.js.
+
+Example:
+```bash
+npm install express
+npm install lodash
+```
+
+### NPX - Node Package Executor
+- Used to execute packages without installing them globally.
+- Downloads the package (if needed) and runs it immediately.
+
+Example:
+```bash
+npx create-react-app my-app
+npx cowsay "Hello World"
+```
+
+---
+
 ## What is JavaScript?
 
 ### Definition
@@ -36,7 +72,16 @@ JavaScript is single-threaded and synchronous by default, but it supports asynch
 
 ---
 
-## Data Types
+### Synchronous 
+The tasks executed one after another and each task waits for the previous task to complete.
+
+### Asychronous
+
+Task executes independently wihout blocking the **Main thread** allowing other code to run while waiting for long operations.s
+
+---
+
+# Data Types
 
 JavaScript data types are divided into two categories:
 
@@ -166,9 +211,9 @@ A copy of the reference is passed. Both variables point to the same object.
 
 ### Important Correction
 
-❌ Immutable (cannot create copy)
+Immutable (cannot create copy)
 
-✅ Immutable (cannot be modified after creation, but copies can be created)
+Immutable (cannot be modified after creation, but copies can be created)
 
 ### Example
 
@@ -181,3 +226,155 @@ console.log(newStr); // Hello World
 ```
 
 The original string is not modified; a new string is created.
+
+
+---
+
+
+## Object Wrappers
+
+Object wrapper is the speacial object, that automatically create automatically created around the **primitive values** to provide the **Method and Properties**.
+
+### Example 
+```javascript
+  let name = "Ganesh";
+
+  console.log(name.toUpperCase());   // Internally new String("name").toUpperCase();
+
+  let a = "hello";
+let b = new String("hello");
+
+console.log(typeof a); // string
+console.log(typeof b); // object
+
+console.log(a == b);  // true
+console.log(a === b); // false
+
+```
+Note : They allow primitives to use methods and properties.
+
+
+--- 
+
+## Module
+
+It is exprot the all functionality with encapsulated way to use in a different file.
+
+```javascript
+
+// filename: add.js
+function add (a , b){
+  return a + b;
+}
+
+module.export add; 
+
+//anther filename: demo.js
+
+let a = 5;
+let b = 5;
+
+let result = add(a , b);
+```
+
+---
+
+## Utility Method
+
+Method - A method is a **function that belongs to an object** and is used to perform an operation on that object.
+
+
+### Utility Method - ***'console.log()'***
+A  **'console.log()'** is a Method Provided by the Browser or Node.js terminal , **Not by javascript language** 
+
+Internally What happends :
+
+When we execute, the javascript engine resolve the console object, call the native **log** function, converts the argument into a printable format, and send the output to the browser's development console or node.js. 
+
+The function call is managed through the call stack like other method function call.
+
+---
+
+# Variable
+
+Variable is named memory location used to access the data that can be modified.
+
+Note : We can store any thing inside the varible into javascript. 
+
+Example : Number, String, Object, Array and Function.
+
+why : Because Javascript is **Dynamically type.** language.
+
+---
+
+
+## var 
+
+
+
+**var** is the keyword the used to declear the value before **ES6**.
+
+it is a **functional scope** , and **global scope** but **not block scope**.
+
+### Problem 
+1. Allow to declear the **same <variable_name>**.
+2. Not **block scope**.
+3. Hoisted and Initialized with **undefined**.
+4. No temporial dead Zone (TTZ).
+5. Not Properly work with async funtions.
+
+
+```javascript
+
+for (var i = 1; i <= 3; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 1000);
+}
+```
+
+``` output
+Output
+4
+4
+4
+```
+
+
+----
+
+## let
+
+let is the keyword is introducing in ES6.
+
+It is a **Golbal scope ,Functional Scope and Block Scope.** it can be **Reassigned** but not Redeclear.
+
+
+### Charcteristic
+1. Block Scoped
+2. Can Be Reassigned
+3. Cannot Be Redeclared.
+4. Hoisted.
+5. Has Temporal Dead Zone (TDZ).
+    (Cannot be accessed before its declaration.)
+6. Preferred in Modern JavaScript.
+
+---
+
+## const
+
+const is a keyword used to declare a variable whose value cannot be reassigned after initialization.
+
+### Characteristics 
+1. Block Scoped
+2. Cannot Be Reassigned.
+3. Cannot Be Redeclared
+4. Must Be Initialized.
+5. Hoisted
+6. Has Temporal Dead Zone (TDZ)
+7. Preferred for Fixed References
+
+---
+
+# Loops
+

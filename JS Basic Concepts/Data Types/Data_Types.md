@@ -36,6 +36,10 @@ JavaScript is single-threaded and synchronous by default, but it supports asynch
 
 ---
 
+Note : Dynamic typing = variable type is determined at runtime and can change during execution.
+
+---
+
 ## Data Types
 
 JavaScript data types are divided into two categories:
@@ -181,3 +185,51 @@ console.log(newStr); // Hello World
 ```
 
 The original string is not modified; a new string is created.
+
+
+
+# JavaScript Interview Questions (Basics)
+
+### 1. What is JavaScript, and why was it created?
+
+### 2. Is JavaScript a compiled language or an interpreted language? Explain your answer.
+
+### 3. What does it mean when we say JavaScript is dynamically typed?
+
+### 4. What is Node.js, and how is it different from JavaScript?
+
+### 5. Why is JavaScript called a single-threaded language?
+
+### 6. If JavaScript is single-threaded, how can it perform asynchronous operations?
+
+### 7. What is the difference between synchronous and asynchronous execution?
+
+### 8. What are the seven primitive data types in JavaScript?
+
+### 9. Why is `null` considered a primitive data type even though `typeof null` returns `"object"`?
+
+### 10. What is the difference between `undefined` and `null`?
+
+### 11. (Tricky) Are strings mutable or immutable in JavaScript? Explain with an example.
+
+### 12. What are non-primitive (reference) data types?
+
+### 13. What does it mean when we say objects are compared by reference instead of by value?
+
+### 14. (Tricky) JavaScript is always pass-by-value. Then why does modifying an object through another variable affect the original object?
+
+### 15. What is the difference between copying a primitive value and copying an object?
+
+### 16. Where are primitive values and object references stored conceptually in memory?
+
+### 17. (Tricky) If arrays are objects in JavaScript, why does `typeof []` return `"object"`?
+
+### 18. What are wrapper objects in JavaScript, and why can we call methods on primitive strings?
+
+### 19. (Tricky) What is the difference between:
+- Primitive String (`"hello"`)
+- String Object (`new String("hello")`)
+
+### 20. Explain the statement:
+
+> "JavaScript is single-threaded, synchronous by default, but capable of asynchronous behavior."
