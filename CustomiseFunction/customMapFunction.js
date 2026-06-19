@@ -1,5 +1,4 @@
-
-
+// simple implementation of map
 
 Array.prototype.myMap = function(callback){
     const result = [];
@@ -19,7 +18,8 @@ const newArr  = arr.myMap((num) => {
     return num * 2;
 });
 
-
-
-
 console.log(newArr);
+
+
+
+// simple implementation 
