@@ -77,7 +77,7 @@ The tasks executed one after another and each task waits for the previous task t
 
 ### Asychronous
 
-Task executes independently wihout blocking the **Main thread** allowing other code to run while waiting for long operations.s
+Task executes independently wihout blocking the **Main thread** allowing other code to run while waiting for long operations.
 
 ---
 
@@ -230,7 +230,16 @@ The original string is not modified; a new string is created.
 
 ---
 
+## pass by value 
+Pass by value is passes the copy the indepentent value to function.
 
+
+## pass by reference 
+
+Pass the reference send the original value of it allow the function to modify data.
+
+
+---
 ## Object Wrappers
 
 Object wrapper is the speacial object, that automatically create automatically created around the **primitive values** to provide the **Method and Properties**.
@@ -378,3 +387,364 @@ const is a keyword used to declare a variable whose value cannot be reassigned a
 
 # Loops
 
+Loops is used for the iterating on the objects, array, String. to traverse the each element based on some condition.
+
+## Types of loops into 
+
+### 1. for
+
+Used to iterate over the array and used when the Number of iteration is kown.
+```javascript
+  for(initialize ; condition; increment){
+    // code
+  }
+```
+
+
+### 2. while 
+Used when number of iteration is unkown.
+
+```javascript
+initilization
+while(condition){
+  // code
+  increment;
+}
+```
+
+
+### 3. do-While
+Excutes the block of code Onces.
+
+```javascript
+initization
+do{
+  // code
+  increment;
+}while(condition)
+```
+
+
+### 4. for...in
+Iterates over the key(propertise) of and Object;
+
+
+```javascript
+for(const key in obj){
+  // code
+}
+
+// Note : it give the inherited properties also
+```
+
+### 5. for...of
+Iterated Over the values of iterable Object and array.
+
+---
+
+## Spread (...)
+
+It is used for expand the elements form Array, Object ,String into a individual elements.
+
+**use case**
+1. copying an Array
+2. Merge Array
+3. passing multiple Agrument of a function
+
+## rest (...)
+
+Used to collects multiple values  into a single Array.
+
+**use cases**
+
+function arguments, array destructuring, and object destructuring to gather remaining elements or properties.
+
+
+--- 
+## ES 6 (Features)
+1. let const variables
+2. Arrow functions
+3. template literals
+4. Default parameters 
+5. Destructuring Array, Objects
+6. rest and spread operator
+7. classes
+8. module import and export keywords
+9. symbol data type (make value Unique);
+10. for...of loop iterates over the object
+11. map and set
+---
+
+##  Functions 
+
+function is the re-useable block of code. designe to perform specific task .it is only used when you called(invoke).
+
+**typeof function = "function"(functional object)**
+
+
+### first class functions
+In javascript supports first class functions, which means function treated as Value.
+
+**They can be**
+
+1. Assigned to variable 
+2. passed as argument
+3. return from another function
+4. stored into data structures like Arrays and Object.
+
+### types of functions
+1. function Decleararion. / statement.
+2. function Expression (stored into variable)
+3. Arrow function (ES 6 feature)
+4. Ananymous function
+5. Immediately Invoked function expression (IIFE)
+6. callback functions
+7. Higher order functions
+8. Recursive function
+
+
+### 1. function Declearation / Statement
+
+function declaration (is also function statement) is a defined with **function** keyword and name
+
+```javascript
+  function greet () {
+    //code
+  }
+  greet();
+```
+
+
+### 2. function Expression 
+function is assigned to a **variable** as value.
+
+```javascript
+  var name = function greet () {
+    //code
+  }
+  name();
+```
+
+### 3.Arrow function (ES6 feature)
+Arrow function is shorter way to write a function introduced into ES6, They do not have their own **this, arguments prototypes , or constructor.**
+
+commonly used into callbacks, array methods and higher order functions
+
+```javascript
+const greet = () => {
+  // code
+  return // 
+}
+
+// if oneline function 
+const greet = ((num) => num*2) 
+// here not need the return 
+```
+
+### 4. Ananymouns function
+
+An anonymouns function is a function **without a name**.
+
+```javascript 
+const greet = function {
+  //code
+}
+
+// [note] : we can't write it alone
+```
+
+
+## 5. Immediately Invoked Function Expression (IIFE)
+
+An IIFE is a function that executes immediately after being defined.
+
+```javascript
+(function () {
+    console.log("IIFE Executed");
+})();
+```
+
+### Arrow Function IIFE
+
+```javascript
+(() => {
+    console.log("IIFE Executed");
+})();
+```
+
+### Use Cases
+
+- Create private scope.
+- Avoid global scope pollution.
+- Run initialization code once.
+
+---
+
+## 6. Callback Function
+
+A callback function is a function passed as an argument to another function and executed later.
+
+```javascript
+function greet(name) {
+    console.log(`Hello ${name}`);
+}
+
+function processUser(callback) {
+    callback("Ganesh");
+}
+
+processUser(greet);
+```
+### Use Cases
+
+- Event handling.
+- Asynchronous operations.
+- Array methods.
+
+---
+
+## 7. Higher Order Function (HOF)
+
+A Higher Order Function is a function that:
+
+- Takes another function as an argument.
+- Returns a function.
+
+### Accepting a Function
+
+```javascript
+function calculate(a, b, operation) {
+    return operation(a, b);
+}
+
+function add(x, y) {
+    return x + y;
+}
+
+console.log(calculate(5, 10, add));
+```
+
+### Returning a Function
+
+```javascript
+function multiplyBy(num) {
+    return function (value) {
+        return value * num;
+    };
+}
+
+const double = multiplyBy(2);
+
+console.log(double(5));
+```
+
+### Common Examples
+
+- map()
+- filter()
+- reduce()
+- forEach()
+
+---
+
+## 8. Recursive Function
+
+A recursive function is a function that calls itself until a base condition is reached.
+
+### Countdown Example
+
+```javascript
+function countDown(num) {
+    if (num === 0) {
+        return;
+    }
+
+    console.log(num);
+
+    countDown(num - 1);
+}
+
+countDown(5);
+```
+
+### Factorial Example
+
+```javascript
+function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+
+    return n * factorial(n - 1);
+}
+
+console.log(factorial(5));
+```
+
+### Output
+
+```javascript
+120
+```
+
+### Characteristics
+
+- Must have a base condition.
+- Useful for tree traversal and divide-and-conquer algorithms.
+- Without a base condition, it can cause a stack overflow error.
+
+---
+
+# Quick Revision Table
+
+| Function Type | Purpose |
+|--------------|---------|
+| Function Declaration | Regular named function |
+| Function Expression | Function stored in a variable |
+| Arrow Function | Short ES6 syntax |
+| Anonymous Function | Function without a name |
+| IIFE | Runs immediately after creation |
+| Callback Function | Passed as an argument |
+| Higher Order Function | Takes or returns functions |
+| Recursive Function | Calls itself |
+
+
+---
+
+# Difference Between Normal Function and Arrow Function
+
+| Feature | Normal Function | Arrow Function |
+|----------|----------------|----------------|
+| Syntax | `function greet() {}` | `const greet = () => {}` |
+| `this` Binding | Has its own `this` | Inherits `this` from parent scope |
+| `arguments` Object | Available | Not available |
+| Constructor | Can be used with `new` | Cannot be used with `new` |
+| Prototype Property | Has `prototype` | Does not have `prototype` |
+| Hoisting | Function declarations are hoisted | Not hoisted like function declarations |
+| Implicit Return | Requires `return` | Can return implicitly |
+| Suitable For | Object methods, constructors | Callbacks, array methods, short functions |
+| Can Be Named | Yes | Usually assigned to variables |
+| `super` Keyword | Has its own context | Inherits from surrounding scope |
+
+## Example
+
+### Normal Function
+
+```javascript
+function add(a, b) {
+    return a + b;
+}
+```
+
+### Arrow Function
+
+```javascript
+const add = (a, b) => a + b;
+```
+
+## Interview One-Liner
+
+| Normal Function | Arrow Function |
+|----------------|----------------|
+| Own `this`, `arguments`, `prototype`, can be used as constructor | Lexically inherits `this`, no `arguments`, no `prototype`, cannot be used as constructor |
+---
