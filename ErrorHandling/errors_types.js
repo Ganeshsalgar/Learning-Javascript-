@@ -1,13 +1,15 @@
 
 
 
-// const obj = {
-//     name : "ganesh",
-//     age : 24,
-//     add:"pune"
-// }
+const obj = {
+    name : "ganesh",
+    age : 24,
+    add:"pune"
+}
 
-
+obj.forEach(element => {
+    console.log(element); 
+});
 // const copy = {...obj}; // spread
 
 // console.log(obj)
@@ -15,19 +17,19 @@
 
 
 
-// // const { name , ...obj2 } = {...obj}; // rest
+// const { name , ...obj2 } = {...obj}; // rest
 
-// // console.log(name)
-// // console.log(obj2)
+// console.log(name)
+// console.log(obj2)
 
 
-const arr = [1,2,3,4,5];
+// const arr = [1,2,3,4,5];
 
-function print(...num){
-    console.log(num[1])
-    console.log(num[2])
-    console.log(num)
+// function print(...num){
+//     console.log(num[1])
+//     console.log(num[2])
+//     console.log(num)
 
-}
+// }
 
-console.log(print(1,2,3,4,5));
+// console.log(print(1,2,3,4,5));
